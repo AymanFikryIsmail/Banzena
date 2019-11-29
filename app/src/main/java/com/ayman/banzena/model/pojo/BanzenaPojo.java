@@ -13,32 +13,38 @@ import java.io.Serializable;
  * Created by ayman on 2019-05-15.
  */
 
-@Entity(tableName = "address")
 public class BanzenaPojo implements Serializable {
 
-    @PrimaryKey(autoGenerate = true)
     private int id;
-    @ColumnInfo(name = "regionName")
-    private String regionName;
-    @ColumnInfo(name = "addressDesc")
-    private String addressDesc;
-    @ColumnInfo(name = "lng")
+    private String banzenaName;
+    private String banzenaOhda;
     private Double lng;
-    @ColumnInfo(name = "lat")
     private Double lat;
+    private Double  banzenaOils;
+    private Double banzenaTanks;
+
     public BanzenaPojo() {
     }
 
-    @Ignore
-    public BanzenaPojo(String regionName, String addressDesc, Double lng, Double lat) {
-        this.regionName = regionName;
-        this.addressDesc = addressDesc;
+    public BanzenaPojo(String banzenaName, String banzenaOhda, Double banzenaOils, Double banzenaTanks  , Double lng, Double lat) {
+        this.banzenaName = banzenaName;
+        this.banzenaOhda = banzenaOhda;
         this.lng = lng;
         this.lat = lat;
+        this.banzenaOils = banzenaOils;
+        this.banzenaTanks = banzenaTanks;
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getBanzenaName() {
+        return banzenaName;
+    }
+
+    public String getBanzenaOhda() {
+        return banzenaOhda;
     }
 
     public Double getLng() {
@@ -49,32 +55,11 @@ public class BanzenaPojo implements Serializable {
         return lat;
     }
 
-    public String getRegionName() {
-        return regionName;
+    public Double getBanzenaOils() {
+        return banzenaOils;
     }
 
-    public String getAddressDesc() {
-        return addressDesc;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
-    }
-
-    public void setAddressDesc(String addressDesc) {
-        this.addressDesc = addressDesc;
-    }
-
-    public void setLng(Double lng) {
-        this.lng = lng;
-    }
-
-    public void setLat(Double lat) {
-        this.lat = lat;
+    public Double getBanzenaTanks() {
+        return banzenaTanks;
     }
 }
