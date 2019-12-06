@@ -29,7 +29,7 @@ public class AddNewActivity extends AppCompatActivity {
         stationInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AddNewActivity.this, MainActivity.class);
+                Intent i = new Intent(AddNewActivity.this, AddBanzenaActivity.class);
                 startActivity(i);
             }
         });

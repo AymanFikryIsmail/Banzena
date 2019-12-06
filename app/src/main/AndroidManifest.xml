@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,13 +30,12 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
+
+        <activity android:name=".activity.MapsActivity2"></activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".activity.MapsActivity2"
-           ></activity>
         <activity android:name=".activity.TextRecoActivity" />
         <activity android:name=".activity.AddnewBayanActivity" />
         <activity android:name=".activity.AddNewActivity" />
@@ -43,22 +43,19 @@
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.DetailsActivity" />
         <activity android:name=".activity.AddDataActivity" />
+        <activity android:name=".activity.MainActivity" />
+
         <activity
             android:name=".activity.SplashActivit"
             android:theme="@style/NoAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

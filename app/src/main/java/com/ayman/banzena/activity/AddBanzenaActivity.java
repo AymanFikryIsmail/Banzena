@@ -56,6 +56,10 @@ public class AddBanzenaActivity extends AppCompatActivity {
                 banzenaTanks = Double.valueOf(binding.banzenaTanks.getText().toString());
                 Banzena=new BanzenaPojo(banzenaName, banzenaOhda , banzenaOils , banzenaTanks ,  lat , lng);
                 fireBaseHelper.createBanzenaOnFirebase(Banzena);
+
+                Intent i = new Intent(AddBanzenaActivity.this, MainActivity.class);
+                startActivity(i);
+
             }
         });
     }
