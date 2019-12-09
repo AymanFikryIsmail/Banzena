@@ -14,8 +14,7 @@ public class SplashActivit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-                new Handler().postDelayed(new Runnable() {
-
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 openActivity();
@@ -25,9 +24,9 @@ public class SplashActivit extends AppCompatActivity {
 
     public void openActivity() {
 
-            Intent i = new Intent(this,MainActivity.class);
-            startActivity(i);
-            finish();
+        Intent i = new Intent(this, AddNewActivity.class);
+        startActivity(i);
+        finish();
 
     }
 }

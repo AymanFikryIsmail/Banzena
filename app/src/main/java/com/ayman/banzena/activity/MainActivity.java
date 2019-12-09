@@ -11,6 +11,8 @@ import android.widget.EditText;
 
 import com.ayman.banzena.R;
 import com.ayman.banzena.adapter.BanzenaAdapter;
+import com.ayman.banzena.helper.FireBaseCallBack;
+import com.ayman.banzena.helper.FireBaseHelper;
 import com.ayman.banzena.model.pojo.BanzenaPojo;
 
 import java.util.ArrayList;
@@ -21,27 +23,27 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<BanzenaPojo> banzenaPojos;
 
     private EditText searchTO ;
+    private FireBaseHelper fireBaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         banzenaPojos = new ArrayList<>();
-        banzenaPojos.add(new BanzenaPojo("el tawan 1","",0.0,0.0));
-        banzenaPojos.add(new BanzenaPojo("el wataneya","",0.0,0.0));
-        banzenaPojos.add(new BanzenaPojo("el tawan 3","",0.0,0.0));
-        banzenaPojos.add(new BanzenaPojo("el nasr 4","",0.0,0.0));
-        banzenaPojos.add(new BanzenaPojo("el petrol 5","",0.0,0.0));
-        banzenaPojos.add(new BanzenaPojo("alex ","",0.0,0.0));
-
-
+        fireBaseHelper=new FireBaseHelper();
+        LinearLayoutManager layoutManager =new LinearLayoutManager(MainActivity.this);
         recyclerView = findViewById(R.id.recycleViewId);
-        materialAdapter=new BanzenaAdapter(this, banzenaPojos);
-
-        LinearLayoutManager layoutManager =new LinearLayoutManager(this);
-
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(materialAdapter);
+        fireBaseHelper.retrieveUserBanzenasFromFirebase(new FireBaseCallBack() {
+            @Override
+            public void getBanzenas(ArrayList<BanzenaPojo> trips) {
+                        banzenaPojos.addAll(trips);
+                materialAdapter=new BanzenaAdapter(MainActivity.this, banzenaPojos);
+                recyclerView.setAdapter(materialAdapter);
+            }
+        });
+
+
         initView();
     }
 

@@ -65,7 +65,7 @@ public class BanzenaAdapter extends RecyclerView.Adapter<BanzenaAdapter.MyViewHo
 
         public void bind(final BanzenaPojo banzenaPojo) {
 
-            banzenaName.setText(banzenaPojo.getRegionName());
+            banzenaName.setText(banzenaPojo.getBanzenaName());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -91,7 +91,7 @@ public class BanzenaAdapter extends RecyclerView.Adapter<BanzenaAdapter.MyViewHo
             List<BanzenaPojo> filteredList = new ArrayList<>();
             for (BanzenaPojo banzenaPojo : originList) {
 
-                if ((banzenaPojo.getRegionName().toLowerCase().contains(searchWord))) {
+                if ((banzenaPojo.getBanzenaName().toLowerCase().contains(searchWord))) {
                     filteredList.add(banzenaPojo);
                 }
             }
