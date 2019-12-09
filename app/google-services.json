@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "527108905883",
+    "firebase_url": "https://banzena-bf738.firebaseio.com",
+    "project_id": "banzena-bf738",
+    "storage_bucket": "banzena-bf738.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527108905883:android:92afc915f865eab09adf3e",
+        "android_client_info": {
+          "package_name": "com.ayman.banzena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527108905883-fdq4gsfehvnth93d02d4m7pll3vukmd7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ayman.banzena",
+            "certificate_hash": "20373142a6d450e375270286294ce9bb21d08bda"
+          }
+        },
+        {
+          "client_id": "527108905883-2m3bna48mmig8q6j248ac4fg0equovlm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAio6QCYYM4VDzoYjcV-d6KkEGPskH_Ej8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527108905883-2m3bna48mmig8q6j248ac4fg0equovlm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
