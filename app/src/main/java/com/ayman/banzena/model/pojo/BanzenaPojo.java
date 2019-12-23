@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 public class BanzenaPojo implements Serializable {
 
-    private int id;
+    private Long id;
     private String banzenaName;
     private String banzenaOhda;
     private Double lng;
@@ -26,7 +26,8 @@ public class BanzenaPojo implements Serializable {
     public BanzenaPojo() {
     }
 
-    public BanzenaPojo(String banzenaName, String banzenaOhda, Double banzenaOils, Double banzenaTanks  , Double lng, Double lat) {
+    public BanzenaPojo(Long id, String banzenaName, String banzenaOhda, Double banzenaOils, Double banzenaTanks  , Double lng, Double lat) {
+        this.id = id;
         this.banzenaName = banzenaName;
         this.banzenaOhda = banzenaOhda;
         this.lng = lng;
@@ -35,7 +36,7 @@ public class BanzenaPojo implements Serializable {
         this.banzenaTanks = banzenaTanks;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

@@ -1,48 +1,450 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".activity.AddDataActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data></data>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" -->
-            <!--android:text="Quality"/>-->
-
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/qualitychckId"
-            android:text="Quality"
-            android:textAlignment="textStart"
-            android:layoutDirection="rtl"
-            />
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="banzeen"
-            android:textAlignment="textStart"
-            android:layoutDirection="rtl"
-            android:layout_marginBottom="50dp"
-            />
+        android:layout_height="match_parent"
+        tools:context=".activity.AddDataActivity">
 
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add notes"
-            android:layout_margin="20dp"
-            android:textColor="@color/white"
-            android:background="@drawable/first_border_raduis"
-            />
-    </LinearLayout>
-</LinearLayout>
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint=" تاريخ المرور "
+                    android:inputType="number"
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/currentdatePass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint=" تاريخ المرور "
+                    android:inputType="number"
+                    android:padding="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint=" ساعة المرور "
+                    android:inputType="number"
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/currentHourPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint=" ساعه المرور "
+                    android:inputType="number"
+                    android:padding="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/solar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint="سولار "
+                    android:inputType="number"
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/oil80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint="بنزين 80 "
+                    android:inputType="number"
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/oil92"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint="بنزين 92 "
+                    android:inputType="number"
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/oil95"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint="بنزين 95 "
+                    android:inputType="number"
+                    android:padding="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint=" اعطال التانكات "
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/tanksProblem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint="    "
+                    android:inputType="textMultiLine"
+                    android:padding="20dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="   الحالة  "
+                android:padding="10dp" />
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/statusGroup">
+
+                <RadioButton
+                    android:id="@+id/good"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="جيد" />
+
+                <RadioButton
+                    android:id="@+id/verygood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="جيد جدا "
+
+                    />
+
+                <RadioButton
+                    android:id="@+id/excellent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ممتاز" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint=" المنتجات المضافه "
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/addedProducts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint="    "
+                    android:inputType="textMultiLine"
+                    android:padding="20dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint=" عرض على استندات "
+                android:padding="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/stands">
+
+                <RadioButton
+                    android:id="@+id/standYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نعم" />
+
+                <RadioButton
+                    android:id="@+id/standNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" لا "
+
+                    />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="  معرض زيوت "
+                android:padding="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/oilShow">
+
+
+            <RadioButton
+                    android:id="@+id/oilsShowYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نعم" />
+
+                <RadioButton
+                    android:id="@+id/OilsShowNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" لا "
+
+                    />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="  مخزن  زيوت "
+                android:padding="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/oiltanks">
+
+                <RadioButton
+                    android:id="@+id/oilsTankYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نعم" />
+
+                <RadioButton
+                    android:id="@+id/oilsTankNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" لا "
+
+                    />
+
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="  شكوى "
+                    android:padding="20dp" />
+
+                <EditText
+                    android:id="@+id/problem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/login_input_drawable"
+                    android:hint="   "
+                    android:inputType="number"
+                    android:padding="20dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="  زيوت التعاون "
+                android:padding="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/taawnOils"
+                >
+
+                <RadioButton
+                    android:id="@+id/taawnOilsYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نعم" />
+
+                <RadioButton
+                    android:id="@+id/taawnOilsNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" لا "
+
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="  منتجات خاصه "
+                android:padding="10dp" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/specialProducts"
+                >
+
+                <RadioButton
+                    android:id="@+id/specialYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نعم" />
+
+                <RadioButton
+                    android:id="@+id/specialNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" لا "
+
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint=" ملئ في جراكن "
+                android:padding="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/jaraken">
+
+                <RadioButton
+                    android:id="@+id/grakenYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نعم" />
+
+                <RadioButton
+                    android:id="@+id/grakenNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" لا "
+
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint=" مطابقة العينات للمواصفات "
+                android:padding="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/specs"
+                >
+
+                <RadioButton
+                    android:id="@+id/specsYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نعم" />
+
+                <RadioButton
+                    android:id="@+id/specsNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" لا "
+
+                    />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/login_input_drawable"
+                android:hint="    "
+                android:inputType="textMultiLine"
+                android:padding="20dp" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/addData"
+                android:layout_margin="20dp"
+                android:background="@drawable/first_border_raduis"
+                android:text="Add notes"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

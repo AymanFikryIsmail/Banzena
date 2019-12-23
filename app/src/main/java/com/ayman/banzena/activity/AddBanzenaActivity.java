@@ -15,6 +15,8 @@ import com.ayman.banzena.databinding.ActivityAddBanzenaBinding;
 import com.ayman.banzena.helper.FireBaseHelper;
 import com.ayman.banzena.model.pojo.BanzenaPojo;
 
+import java.util.Date;
+
 public class AddBanzenaActivity extends AppCompatActivity {
 
     private FireBaseHelper fireBaseHelper;
@@ -54,7 +56,9 @@ public class AddBanzenaActivity extends AppCompatActivity {
                 banzenaOhda = binding.banzenaOhda.getText().toString();
                 banzenaOils = Double.valueOf(binding.banzenaOils.getText().toString());
                 banzenaTanks = Double.valueOf(binding.banzenaTanks.getText().toString());
-                Banzena=new BanzenaPojo(banzenaName, banzenaOhda , banzenaOils , banzenaTanks ,  lat , lng);
+                Date d = new Date();
+                Long date =d.getTime();
+                Banzena=new BanzenaPojo(date, banzenaName, banzenaOhda , banzenaOils , banzenaTanks ,  lat , lng);
                 fireBaseHelper.createBanzenaOnFirebase(Banzena);
 
                 Intent i = new Intent(AddBanzenaActivity.this, MainActivity.class);
